@@ -14,3 +14,7 @@ $ composer install
 ```
 $ symfony server:start or $ php bin/console server:run
 ```
+or
+```
+$ php bin/console server:run
+```
