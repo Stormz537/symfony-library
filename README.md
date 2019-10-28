@@ -12,5 +12,9 @@ $ composer install
 ### Start the server
 
 ```
-$ symfony server:start
+$ symfony server:start or $ php bin/console server:run
+```
+or
+```
+$ php bin/console server:run
 ```
