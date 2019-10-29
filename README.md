@@ -1,7 +1,7 @@
 ## Avancement du projet
 - [x] Création du projet symfony
 - [x] TP2
-- [x] TP3
+- [x] TP3 + création de la relation `ManyToMany` entre les entités `User`->`Livre`
 - [x] TP4
 - [x] TP5
 - [ ] TP6
