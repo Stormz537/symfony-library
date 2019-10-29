@@ -1,4 +1,4 @@
-## Avancements
+## Avancement du projet
 - [x] Création du projet symfony
 - [x] TP2
 - [x] TP3
