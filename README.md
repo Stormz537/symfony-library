@@ -17,6 +17,10 @@ In your console, run :
 ```
 $ composer install
 ```
+### And then :
+```
+$ php bin/console doctrine:migrations:migrate
+```
 
 ### Start the server
 
