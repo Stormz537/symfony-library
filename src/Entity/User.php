@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -49,6 +51,16 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255)
      */
     private $prenom;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Livre", inversedBy="users")
+     */
+    private $livre;
+
+    public function __construct()
+    {
+        $this->livre = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -155,6 +167,32 @@ class User implements UserInterface
     public function setPrenom(string $prenom): self
     {
         $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Livre[]
+     */
+    public function getLivre(): Collection
+    {
+        return $this->livre;
+    }
+
+    public function addLivre(Livre $livre): self
+    {
+        if (!$this->livre->contains($livre)) {
+            $this->livre[] = $livre;
+        }
+
+        return $this;
+    }
+
+    public function removeLivre(Livre $livre): self
+    {
+        if ($this->livre->contains($livre)) {
+            $this->livre->removeElement($livre);
+        }
 
         return $this;
     }
