@@ -4,8 +4,8 @@
 - [x] TP3
 - [x] TP4
 - [x] TP5
-- [] TP6
-- [] TP7
+- [ ] TP6
+- [ ] TP7
 
 ## GETTING STARTED
 
