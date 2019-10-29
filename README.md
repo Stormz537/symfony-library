@@ -17,6 +17,10 @@ In your console, run :
 ```
 $ composer install
 ```
+
+Connect the project to your database :
+- Modify databse URL in `.env.example` and save under `.env`
+
 Then :
 ```
 $ php bin/console doctrine:migrations:migrate
