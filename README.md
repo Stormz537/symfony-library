@@ -1,3 +1,12 @@
+## Avancements
+- [x] Création du projet symfony
+- [x] TP2
+- [x] TP3
+- [x] TP4
+- [x] TP5
+- [] TP6
+- [] TP7
+
 ## GETTING STARTED
 
 ### Prerequisites
