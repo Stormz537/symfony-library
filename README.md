@@ -17,7 +17,7 @@ In your console, run :
 ```
 $ composer install
 ```
-### And then :
+Then :
 ```
 $ php bin/console doctrine:migrations:migrate
 ```
