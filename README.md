@@ -49,7 +49,7 @@ $ php bin/console server:run
 - [ ] Affciher la liste des livres emprunter par l'utilisateur courant
 - [x] Ajouter un livre au catalogue (depuis un livre)
 - [x] Modifier un livre du catalogue (depuis un livre)
-- [ ] Supprimer  un livre du catalogue
+- [x] Supprimer un livre du catalogue (depuis un livre)
 - [ ] Afficher la liste des livres emprumtés
 - [x] Créer une catégorie de livre 
 - [x] Modifier une catégorie de livre
