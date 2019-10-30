@@ -35,3 +35,22 @@ or
 ```
 $ php bin/console server:run
 ```
+
+## Fonctionnalités
+- [x] Créer un compte
+- [ ] Modifier son mot de passe
+- [x] Se connecter à l'application
+- [x] Se déconnecter à l'application
+- [ ] Afficher son profil
+- [ ] Afficher la liste des livre du catalogue
+- [x] Emprunter un livre
+- [x] Retourner un livre
+- [ ] Affciher la liste des livres emprunter par l'utilisateur courant
+- [x] Ajouter un livre au catalogue (depuis un livre)
+- [x] Modifier un livre du catalogue (depuis un livre)
+- [ ] Supprimer  un livre du catalogue
+- [ ] Afficher la liste des livres emprumtés
+- [x] Créer une catégorie de livre 
+- [x] Modifier une catégorie de livre
+- [x] Supprimer une catégorie de livre
+- [x] Afficher une catégorie de livre
