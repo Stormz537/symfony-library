@@ -2,27 +2,24 @@
 
 namespace App\Form;
 
-use App\Entity\Livre;
+use App\Entity\Catalogue;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class LivreType extends AbstractType
+class CatalogueType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titre')
-            ->add('auteur')
-            ->add('category')
-            ->add('catalogue')
+            ->add('nom')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Livre::class,
+            'data_class' => Catalogue::class,
         ]);
     }
 }

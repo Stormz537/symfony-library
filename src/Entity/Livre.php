@@ -38,6 +38,11 @@ class Livre
      */
     private $users;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Catalogue", inversedBy="livres")
+     */
+    private $catalogue;
+
     public function __construct()
     {
         $this->users = new ArrayCollection();
@@ -108,6 +113,18 @@ class Livre
             $this->users->removeElement($user);
             $user->removeLivre($this);
         }
+
+        return $this;
+    }
+
+    public function getCatalogue(): ?Catalogue
+    {
+        return $this->catalogue;
+    }
+
+    public function setCatalogue(?Catalogue $catalogue): self
+    {
+        $this->catalogue = $catalogue;
 
         return $this;
     }
