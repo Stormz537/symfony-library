@@ -1,13 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Catalogue{% endblock %}
+{% block title %}MàJ Catalogue{% endblock %}
 
 {% block body %}
-    <h1>Edit Catalogue</h1>
+    <div class="container">
+            <h1>Modifier Catalogue</h1>
 
-    {{ include('catalogue/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('catalogue_index') }}">back to list</a>
-
-    {{ include('catalogue/_delete_form.html.twig') }}
+            {{ include('catalogue/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
+        
+            <a href="{{ path('catalogue_index') }}">
+                <button class="btn btn-sm btn-secondary">Retour aux catalogues</button>
+            </a>
+        
+            {{ include('catalogue/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

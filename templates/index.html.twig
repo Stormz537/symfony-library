@@ -7,12 +7,5 @@
                 <h2>Bienvenue {{ app.user.prenom }} dans le gestionnaire de bibliothèque</h2>
             </div>
         </div>
-        <a href={{ path('livre_index') }}>Livres</a>
-        <a href={{ path('category_index') }}>Catégories</a>
-        {% if app.user %}
-            <div>
-                <a href="{{ path('app_logout') }}">Logout</a>
-            </div>
-        {% endif %}
-        </div>
+    </div>
 {% endblock %}

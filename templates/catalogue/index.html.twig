@@ -3,33 +3,43 @@
 {% block title %}Catalogue index{% endblock %}
 
 {% block body %}
-    <h1>Catalogue index</h1>
+    <div class="container">
+        <div class="row mt-5">
+                <h1>Liste des catalogues</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for catalogue in catalogues %}
-            <tr>
-                <td>{{ catalogue.id }}</td>
-                <td>{{ catalogue.nom }}</td>
-                <td>
-                    <a href="{{ path('catalogue_show', {'id': catalogue.id}) }}">show</a>
-                    <a href="{{ path('catalogue_edit', {'id': catalogue.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('catalogue_new') }}">Create new</a>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Id</th>
+                            <th>Nom</th>
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for catalogue in catalogues %}
+                        <tr>
+                            <td>{{ catalogue.id }}</td>
+                            <td>{{ catalogue.nom }}</td>
+                            <td>
+                                <a href={{ path('catalogue_show', {'id': catalogue.id}) }}>
+                                    <button class="btn btn-sm btn-secondary">Afficher</button>
+                                </a>
+                                <a href={{ path('catalogue_edit', {'id': catalogue.id}) }}>
+                                    <button class="btn btn-sm btn-primary">Modifier</button>
+                                </a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="4">Aucun catalogue trouvé</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            
+                <a href={{ path('catalogue_new') }}>
+                    <button class="btn btn-sm btn-success">Ajouter un catalogue</button>
+                </a>
+        </div>
+    </div>
 {% endblock %}

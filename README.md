@@ -6,7 +6,7 @@
 - [x] TP5
 - [ ] TP6
 - [ ] TP7
-- [ ] Librairie / Framework de style CSS
+- [x] Librairie / Framework de style CSS (Bootstrap)
 
 ## GETTING STARTED
 
@@ -20,7 +20,8 @@ $ composer install
 ```
 
 Connect the project to your database :
-- Modify databse URL in `.env.example` and save under `.env`
+- create your database
+- Modify databse URL in `.env`
 
 Then :
 ```
