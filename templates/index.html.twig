@@ -3,18 +3,15 @@
 {% block body %}
     <div class="main mt-5">
         <div class="container text-center">
-            <img class="profile-picture" src="{{ asset('images/profil.png') }}" alt="profil">
-            <h1>Benjamin Hay</h1>
             <div class="introduction">
-                <h4>Étudiant en développement Web</h4>
-                <h6>à l'Université de Limoges</h6>
+                <h2>Bienvenue {{ app.user.prenom }} dans le gestionnaire de bibliothèque</h2>
             </div>
         </div>
         <a href={{ path('livre_index') }}>Livres</a>
         <a href={{ path('category_index') }}>Catégories</a>
         {% if app.user %}
-            <div class="mb-3">
-                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+            <div>
+                <a href="{{ path('app_logout') }}">Logout</a>
             </div>
         {% endif %}
         </div>
