@@ -5,9 +5,9 @@
 {% block body %}
     <div class="container">
         <div class="row mt-5">
-                <h1>Liste des livres</h1>
+                <h2>Liste des livres</h2>
 
-                <table class="table">
+                <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">Id</th>
@@ -57,6 +57,16 @@
                 </table>
             
                 <a href="{{ path('livre_new') }}"><button class="btn btn-sm btn-success">Ajouter un livre</button></a>
+        </div>
+        <div class="mt-5">
+            <h2>Livres empruntés</h2>
+            {% for livre in livres %}
+                {% for user in livre.users %}
+                    {% for livre in user.livre %}
+                        <p>{{livre.titre}}</p>
+                    {% endfor %}
+                {% endfor %}
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
