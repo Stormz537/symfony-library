@@ -58,15 +58,47 @@
             
                 <a href="{{ path('livre_new') }}"><button class="btn btn-sm btn-success">Ajouter un livre</button></a>
         </div>
-        <div class="mt-5">
-            <h2>Livres empruntés</h2>
-            {% for livre in livres %}
-                {% for user in livre.users %}
-                    {% for livre in user.livre %}
-                        <p>{{livre.titre}}</p>
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Livres empruntés</th>
+                            <th>Emprunté par</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for livre in livres %}
+                        {% for user in livre.users %}
+                            <tr>
+                                <td>{{ livre.titre }}</td>
+                                <td>{{ user.username }}</td>
+                            </tr>
+                        {% endfor %}
                     {% endfor %}
-                {% endfor %}
-            {% endfor %}
+                    </tbody>
+                </table>  
+            </div> 
+            <div class="col-md-4">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Empruntés par vous</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for livre in livres %}
+                        {% for user in livre.users %}
+                            <tr>
+                            {% if user == app.user %}
+                                <td>{{ livre.titre }}</td>
+                            {% endif %}
+                            </tr>
+                        {% endfor %}
+                    {% endfor %}
+                    </tbody>
+                </table>  
+            </div>     
         </div>
     </div>
 {% endblock %}
