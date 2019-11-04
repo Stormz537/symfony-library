@@ -19,6 +19,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/">Acceuil <span class="sr-only">(current)</span></a>
                     </li>
+                    {% if is_granted('ROLE_ADMIN') == true %}
+                        <li class="nav-item">
+                            <a class="nav-link" href={{ path('user_index') }}>Utilisateurs</a>
+                        </li>
+                    {% endif %}
                     <li class="nav-item">
                         <a class="nav-link" href={{ path('catalogue_index') }}>Catalogues</a>
                     </li>
