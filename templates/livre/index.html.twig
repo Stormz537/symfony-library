@@ -60,44 +60,48 @@
         </div>
 
         <div class="row mt-5">
-            <div class="col-md-4">
-                <table class="table table-striped">
-                    <thead>
-                        <th>Livres empruntés</th>
-                        <th>Emprunté par</th>
-                    </thead>
-                    <tbody>
-                    {% for livre in livres %}
-                        {% for user in livre.users %}
-                            <tr>
-                                <td>{{ livre.titre }}</td>
-                                <td>{{ user.username }}</td>
-                            </tr>
+            {% if is_granted('ROLE_ADMIN') == true %}
+                <div class="col-md-4">
+                    <table class="table table-striped">
+                        <thead>
+                            <th>Livres empruntés</th>
+                            <th>Emprunté par</th>
+                        </thead>
+                        <tbody>
+                        {% for livre in livres %}
+                            {% for user in livre.users %}
+                                <tr>
+                                    <td>{{ livre.titre }}</td>
+                                    <td>{{ user.username }}</td>
+                                </tr>
+                            {% endfor %}
                         {% endfor %}
-                    {% endfor %}
-                    </tbody>
-                </table>  
-            </div> 
-            <div class="col-md-4 offset-md-2">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Empruntés par vous</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {% for livre in livres %}
-                        {% for user in livre.users %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') == false %}
+                <div class="col-md-4">
+                    <table class="table table-striped">
+                        <thead>
                             <tr>
-                            {% if user == app.user %}
-                                <td>{{ livre.titre }}</td>
-                            {% endif %}
+                                <th>Empruntés par vous</th>
                             </tr>
+                        </thead>
+                        <tbody>
+                        {% for livre in livres %}
+                            {% for user in livre.users %}
+                                <tr>
+                                {% if user == app.user %}
+                                    <td>{{ livre.titre }}</td>
+                                {% endif %}
+                                </tr>
+                            {% endfor %}
                         {% endfor %}
-                    {% endfor %}
-                    </tbody>
-                </table>  
-            </div>
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
