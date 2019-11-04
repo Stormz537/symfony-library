@@ -58,14 +58,13 @@
             
                 <a href="{{ path('livre_new') }}"><button class="btn btn-sm btn-success">Ajouter un livre</button></a>
         </div>
+
         <div class="row mt-5">
             <div class="col-md-4">
-                <table class="table table-sm">
+                <table class="table table-striped">
                     <thead>
-                        <tr>
-                            <th>Livres empruntés</th>
-                            <th>Emprunté par</th>
-                        </tr>
+                        <th>Livres empruntés</th>
+                        <th>Emprunté par</th>
                     </thead>
                     <tbody>
                     {% for livre in livres %}
@@ -79,8 +78,8 @@
                     </tbody>
                 </table>  
             </div> 
-            <div class="col-md-4">
-                <table class="table table-sm">
+            <div class="col-md-4 offset-md-2">
+                <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>Empruntés par vous</th>
@@ -98,7 +97,8 @@
                     {% endfor %}
                     </tbody>
                 </table>  
-            </div>     
+            </div>
         </div>
     </div>
 {% endblock %}
+
