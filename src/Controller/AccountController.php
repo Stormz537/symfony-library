@@ -56,7 +56,7 @@ class AccountController extends AbstractController
 
             // Si l'ancien mot de passe est bon
             if ($passwordEncoder->isPasswordValid($user, $old_pwd)) {
-                // $newEncodedPassword = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
+
                 $user->setPassword(
                     $passwordEncoder->encodePassword(
                         $user,
@@ -67,11 +67,12 @@ class AccountController extends AbstractController
                 $em->persist($user);
                 $em->flush();
 
-                $this->addFlash('notice', 'Votre mot de passe à bien été changé !');
+                $this->addFlash('success', 'Votre mot de passe à bien été changé !');
 
-                return $this->redirectToRoute('index_route');
+                return $this->redirectToRoute('profile_changepassword');
             } else {
-                $form->addError(new FormError('Ancien mot de passe incorrect'));
+
+                $this->addFlash('error', 'Ancien mot de passe incorrect !');
             }
 
         }
