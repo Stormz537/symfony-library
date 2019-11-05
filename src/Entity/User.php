@@ -53,12 +53,18 @@ class User implements UserInterface
     private $prenom;
 
     /**
+     * @ORM\Column(name="is_active", type="boolean")
+     */
+    private $isActive;
+
+    /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Livre", inversedBy="users")
      */
     private $livre;
 
     public function __construct()
     {
+        $this->isActive = true;
         $this->livre = new ArrayCollection();
     }
 
