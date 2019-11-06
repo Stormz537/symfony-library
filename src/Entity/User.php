@@ -177,6 +177,23 @@ class User implements UserInterface
         return $this;
     }
 
+    /*
+     * Get isActive
+     */
+    public function getIsActive()
+    {
+        return $this->isActive;
+    }
+
+    /*
+     * Set isActive
+     */
+    public function setIsActive($isActive)
+    {
+        $this->isActive = $isActive;
+        return $this;
+    }
+
     /**
      * @return Collection|Livre[]
      */

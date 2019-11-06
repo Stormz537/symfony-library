@@ -9,7 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class UserType extends AbstractType
+class AccountType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -18,10 +18,6 @@ class UserType extends AbstractType
             ->add('username')
             ->add('nom')
             ->add('prenom')
-            ->add('isActive', CheckboxType::class, [
-                'label' => 'Est actif',
-                'required' => false,
-            ])
         ;
     }
 

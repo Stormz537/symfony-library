@@ -16,6 +16,7 @@
                     <th scope="col">Username</th>
                     <th scope="col">Nom</th>
                     <th scope="col">Prenom</th>
+                    <th scope="col">Actif</th>
                     <th scope="col">actions</th>
                 </tr>
                 </thead>
@@ -35,6 +36,14 @@
                         <td>{{ user.username }}</td>
                         <td>{{ user.nom }}</td>
                         <td>{{ user.prenom }}</td>
+                        <td>
+                            {% if user.isActive == '0' %}
+                                NON
+                            {% endif %}
+                            {% if  user.isActive == '1' %}
+                                OUI
+                            {% endif %}
+                        </td>
                         <td>
                             <a href="{{ path('user_show', {'id': user.id}) }}">
                                 <button class="btn btn-sm btn-secondary">Afficher</button>

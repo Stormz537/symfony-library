@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Form\UserType;
+use App\Form\AccountType;
 use App\Form\ChangePasswordFormType;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,7 +22,7 @@ class AccountController extends AbstractController
     public function profileEdit(Request $request, UserRepository $user) : Response
     {
         $user = $this->getUser();
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(AccountType::class, $user);
 
         $form->handleRequest($request);
 
@@ -32,9 +32,9 @@ class AccountController extends AbstractController
             return $this->redirectToRoute('index_route');
         }
 
-        return $this->render('user/edit.html.twig', [
+        return $this->render('user/edit_account.html.twig', [
             'user' => $user,
-            'form' => $form->createView(),
+            'accountForm' => $form->createView(),
         ]);
     }
 
@@ -79,7 +79,7 @@ class AccountController extends AbstractController
 
         return $this->render('user/edit_password.html.twig', [
             'user' => $user,
-            'form' => $form->createView(),
+            'changePasswordForm' => $form->createView(),
         ]);
     }
 
