@@ -4,8 +4,8 @@
 - [x] TP3 + création de la relation `ManyToMany` entre les entités `User`->`Livre`
 - [x] TP4
 - [x] TP5
-- [ ] TP6
-- [ ] TP7
+- [x] TP6
+- [x] TP7
 - [x] Librairie / Framework de style CSS (Bootstrap)
 
 ## GETTING STARTED
@@ -40,7 +40,7 @@ $ php bin/console server:run
 
 ## Fonctionnalités
 - [x] Créer un compte
-- [ ] Modifier son mot de passe
+- [x] Modifier son mot de passe
 - [x] Se connecter à l'application
 - [x] Se déconnecter à l'application
 - [x] Afficher son profil
