@@ -24,9 +24,11 @@
                                 <a href={{ path('catalogue_show', {'id': catalogue.id}) }}>
                                     <button class="btn btn-sm btn-secondary">Afficher</button>
                                 </a>
+                                {% if is_granted('ROLE_ADMIN') == true %}
                                 <a href={{ path('catalogue_edit', {'id': catalogue.id}) }}>
                                     <button class="btn btn-sm btn-primary">Modifier</button>
                                 </a>
+                                {% endif %}
                             </td>
                         </tr>
                     {% else %}
@@ -36,10 +38,12 @@
                     {% endfor %}
                     </tbody>
                 </table>
-            
+                
+                {% if is_granted('ROLE_ADMIN') == true %}
                 <a href={{ path('catalogue_new') }}>
                     <button class="btn btn-sm btn-success">Ajouter un catalogue</button>
                 </a>
+                {% endif %}
         </div>
     </div>
 {% endblock %}

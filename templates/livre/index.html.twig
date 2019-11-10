@@ -30,9 +30,11 @@
                                 <a href="{{ path('livre_show', { 'id': livre.id }) }}">
                                     <button class="btn btn-sm btn-secondary">Afficher</button>
                                 </a>
+                                {% if is_granted('ROLE_ADMIN') == true %}
                                 <a href="{{ path('livre_edit', { 'id': livre.id }) }}">
                                     <button class="btn btn-sm btn-primary">Modifier</button>
                                 </a>
+                                {% endif %}
                                 {% set emp= false %}
                                 <a href="{{ path('emprunt', { 'id': livre.id }) }}">
                                 {% for user in livre.users %}
@@ -55,8 +57,9 @@
                     {% endfor %}
                     </tbody>
                 </table>
-            
-                <a href="{{ path('livre_new') }}"><button class="btn btn-sm btn-success">Ajouter un livre</button></a>
+                {% if is_granted('ROLE_ADMIN') == true %}
+                    <a href="{{ path('livre_new') }}"><button class="btn btn-sm btn-success">Ajouter un livre</button></a>
+                {% endif %}
         </div>
 
         <div class="row mt-5">
