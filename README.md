@@ -1,6 +1,6 @@
 ### Projet de licence (rendu)
 
-**[Live Demo](https://mylibrairy.bhay.ovh/)** - Create a new account
+**[Live Demo (not working)](https://mylibrairy.bhay.ovh/)** - Create a new account
 
 ## Avancement du projet
 - [x] Création du projet symfony
